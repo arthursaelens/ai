@@ -1,0 +1,2 @@
+run_id,batch_size,dropout_rate,epochs,train_accuracy,val_accuracy,train_loss,val_loss
+1,64,0.1,10,0.9571250081062317,0.9104999899864197,0.11180881410837173,0.2846488356590271

@@ -1,0 +1,44 @@
+data:
+  input_shape:
+  - 28
+  - 28
+  - 1
+  num_classes: 10
+  train_size: 60000
+  val_size: 10000
+hyperparameters:
+  batch_size: 64
+  dropout_rate: 0.1
+model:
+  architecture:
+  - Conv2D:
+      activation: relu
+      filters: 28
+      kernel_size: 3
+      padding: same
+  - MaxPooling2D: {}
+  - Dropout:
+      rate: 0.1
+  - Conv2D:
+      activation: relu
+      filters: 56
+      kernel_size: 3
+      padding: same
+  - MaxPooling2D: {}
+  - Dropout:
+      rate: 0.1
+  - Flatten: {}
+  - Dense:
+      activation: relu
+      units: 56
+  - Dense:
+      activation: sigmoid
+      units: 10
+training:
+  batch_size: 64
+  epochs: 10
+  loss: categorical_crossentropy
+  metrics:
+  - accuracy
+  optimizer:
+    type: adam
